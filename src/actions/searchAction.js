@@ -99,8 +99,6 @@ export const geolocationApi = () => {
     navigator.geolocation.getCurrentPosition(success, error);
     function success() {
       navigator.geolocation.watchPosition(position => {
-        // console.log(position.coords.latitude, position.coords.longitude);
-
         let location =
           position.coords.latitude + "," + position.coords.longitude;
         axios.get(`${API_ADDRESS_LOCATION}${location}`).then(response => {

@@ -6,7 +6,7 @@ import { API_ADDRESS_CURRENT, API_ADDRESS } from "../actions/type";
 import { KEY_WEATHER } from "../actions/type";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SplitText from "react-pose-text";
-// import Spinner from "react-bootstrap/Spinner";
+import Toggleswitch from "../components/Toggleswitch";
 
 const charPoses = {
   exit: { opacity: 0, y: 20 },
@@ -88,9 +88,15 @@ class Favorite extends Component {
     if (storedWeather) {
       return (
         <div className="container-favorite">
+          <div className="toggle-container-favorite">
+            <span className="toggle">
+              <Toggleswitch />
+            </span>
+          </div>
+
           <div
             style={{
-              color: "black",
+              color: "white",
               fontWeight: "bold",
               fontSize: "30px"
             }}
@@ -149,7 +155,7 @@ class Favorite extends Component {
               data-target="#myModal"
             >
               <span className="fa fa-trash" style={{ fontSize: "20px" }}></span>{" "}
-              Delete all favorite
+              Delete all favorites
             </button>
 
             <div className="modal fade" id="myModal" role="dialog">
@@ -166,7 +172,7 @@ class Favorite extends Component {
                     <h4 className="modal-title">Warnning</h4>
                   </div>
                   <div className="modal-body">
-                    <p>Are you sure you want to delete all your favorite?</p>
+                    <p>Are you sure you want to delete all your favorites?</p>
                   </div>
                   <div className="modal-footer">
                     <button
@@ -186,15 +192,31 @@ class Favorite extends Component {
       );
     } else if (localStorage.getItem("weatherInfo") === null) {
       return (
-        <div style={{ color: "black", fontWeight: "bold", fontSize: "30px" }}>
-          <br />
-          <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>
-            You dont have favorite
-          </SplitText>
-          <br />
-          <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>
-            Pls choose from the home page
-          </SplitText>
+        <div>
+          <div className="toggle-container">
+            <span className="toggle">
+              <Toggleswitch />
+            </span>
+          </div>
+
+          <div
+            style={{
+              color: "white",
+              fontWeight: "bold",
+              fontSize: "30px",
+              // marginLeft: "30px",
+              textAlign: "center"
+            }}
+          >
+            <br />
+            <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>
+              You dont have favorite
+            </SplitText>
+            <br />
+            <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>
+              choose from the home page
+            </SplitText>
+          </div>
         </div>
       );
     }

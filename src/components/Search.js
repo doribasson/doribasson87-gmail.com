@@ -82,7 +82,6 @@ class Search extends Component {
             fullWidth
             size="small"
             InputProps={{ ...params.InputProps, type: "search" }}
-            // onClick={() => console.log(this.state.selectedOption)}
             onChange={e => this.updateState(e)}
             onKeyPress={e => this.handleKeyPress(e)}
           />

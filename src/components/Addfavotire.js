@@ -21,28 +21,31 @@ export class Addfavotire extends Component {
 
   addCityToStorage = () => {
     let addCity = this.props.cityName;
-    let storedCity = JSON.parse(localStorage.getItem("weatherInfo")) || [];
-
-    const result = storedCity.some(city => city === addCity);
-    if (!result) storedCity.push(addCity);
-    // document.querySelector(".fas.fa-star").style.color = "red";
-
-    localStorage.setItem("weatherInfo", JSON.stringify(storedCity));
-    this.props.storageAction(addCity);
-    this.setState({ favorite: true });
+    if (localStorage.getItem("weatherInfo") === null) {
+      let storedCity = [];
+      storedCity.push(addCity);
+      localStorage.setItem("weatherInfo", JSON.stringify(storedCity));
+      this.setState({ favorite: true });
+    } else {
+      let storedCity = JSON.parse(localStorage.getItem("weatherInfo"));
+      const result = storedCity.some(city => city === addCity);
+      if (!result) storedCity.push(addCity);
+      localStorage.setItem("weatherInfo", JSON.stringify(storedCity));
+      this.setState({ favorite: true });
+    }
   };
 
   delteCityFromFavorite = deleteCity => {
     let storedCity = JSON.parse(localStorage.getItem("weatherInfo"));
+
     const NewStoredCity = storedCity.filter(city => city !== deleteCity);
-    document.querySelector(".fas.fa-star").style.color = "yellow";
-    localStorage.removeItem("weatherInfo");
     localStorage.setItem("weatherInfo", JSON.stringify(NewStoredCity));
     this.setState({ favorite: false });
+    if (NewStoredCity.length === 0) localStorage.clear();
   };
 
   render() {
-    let checkFavorite = JSON.parse(localStorage.getItem("weatherInfo"));
+    let checkFavorite = JSON.parse(localStorage.getItem("weatherInfo")) || [];
 
     if (checkFavorite !== null) {
       var doubled = checkFavorite.some(city => city === this.props.cityName);
@@ -65,14 +68,6 @@ export class Addfavotire extends Component {
         );
       }
     }
-    if (checkFavorite === null)
-      return (
-        <div className="Favorite-pos">
-          <button className="btn btn-dark" onClick={this.MyLocalStorage}>
-            <i className="fas fa-star" style={{ color: "white" }}></i>
-          </button>
-        </div>
-      );
   }
 }
 

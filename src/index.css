@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #333;
-  min-height: 100%;
+  /* min-height: 100%; */
 }
 
 code {
@@ -30,10 +30,11 @@ code {
   flex: 1;
 }
 
+/******************************** navbar**************************** */
 .bd-navbar {
   background-color: #1120384f;
   /* background-color: #2e59a0; */
-  height: 3rem;
+  height: 3.2rem;
 }
 
 a.navbar-brand {
@@ -45,14 +46,55 @@ a.navbar-brand {
 .main-nav-active {
   /* background-color: rgb(75, 75, 75); */
   background-color: rgb(200, 186, 186);
-  /* width: 70px; */
-  /* text-align: center; */
+  width: 100px;
+  text-align: center;
+  border-bottom: 6px solid;
+  /* border-top: 6px solid; */
+  /* border-bottom-width: 310px; */
+  border-bottom-color: #000;
+  border-top-color: #000;
 }
+
+@media (max-width: 584px) {
+  a.navbar-brand {
+    width: 80px;
+    margin-right: 0.5rem;
+  }
+}
+
+/************************************************************ */
 
 .toggle-container {
   display: flex;
   justify-content: flex-end;
+  margin-top: 6px;
 }
+
+@media (max-width: 584px) {
+  .toggle-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 11px;
+    margin-right: 3px;
+  }
+}
+
+.toggle-container-favorite {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -50px;
+  margin-right: -40px;
+}
+
+@media (max-width: 584px) {
+  .toggle-container-favorite {
+    display: flex;
+    margin-top: -25px;
+    margin-right: -33px;
+  }
+}
+
+/************************************************************ */
 
 .box2-searchCity-favorite-container {
   /* max-width: 1400px; */
@@ -121,6 +163,8 @@ a.navbar-brand {
     opacity: 0.8;
     /* background-image: url("data/images/weather2.jpg"); */
     background-size: auto;
+    display: flex;
+    justify-content: center;
     border-radius: 20px;
     border: none;
     display: flex;
@@ -133,8 +177,9 @@ a.navbar-brand {
 
 @media (max-width: 584px) {
   div.card-deck {
-    height: 650px;
-    width: 100px;
+    /* height: 750px; */
+    /* width: 100px; */
+    /* height: 720px; */
     flex-wrap: wrap;
     border: none;
     /* background-color: black; */
@@ -142,7 +187,7 @@ a.navbar-brand {
     align-content: space-around;
     justify-content: space-evenly;
     flex-direction: row;
-    padding: 20px;
+    padding: 10px;
   }
 }
 
@@ -164,6 +209,7 @@ div.card-deck {
   color: white;
   justify-content: space-evenly;
   flex-direction: column;
+  margin-top: 40px;
 }
 
 .title-container {
@@ -171,15 +217,17 @@ div.card-deck {
   justify-content: flex-end;
 }
 
-.a {
+.Addfavotire {
   display: flex;
   align-self: flex-start;
   margin-top: 10px;
+  margin-left: 0px;
 }
 
 .dori-container1 {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: row;
+  /* flex-direction: column-reverse; */
   margin-left: 7%;
 }
 
@@ -187,6 +235,7 @@ div.card-deck {
   display: flex;
   /* border: solid #333; */
   justify-content: center;
+  text-align: center;
   color: white;
   flex-direction: column;
   margin: 40px;
@@ -212,7 +261,7 @@ div.card-deck {
   margin-top: 100px;
   flex-wrap: wrap;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   /* text-align: center; */
 
   /* border-style: solid; */
@@ -258,49 +307,18 @@ div.favorite-card {
   border-radius: 20px;
   box-shadow: inset 0 3px 10px #ffffff;
   padding: 40px 0 50px 0;
+  margin: 20px;
 }
 
 @media (max-width: 584px) {
   div.favorite-card {
-    height: 250px;
-    align-self: center;
-    align-items: center;
-    margin: 1vh;
-    align-content: center;
-    width: 180px;
+    height: 220px;
+    width: 160px;
   }
 }
 
 /* -------------------------------------- */
 
-@media (max-width: 584px) {
-  div.card111 {
-    background-image: none;
-    box-shadow: inset 0 3px 10px #ffffff;
-    border-style: solid;
-    border-width: 2px;
-    /* background: linear-gradient(to right, #666699 0%, #330147 100%); */
-    opacity: 0.8;
-    /* background-image: url("data/images/weather2.jpg"); */
-    background-size: auto;
-    border-radius: 20px;
-    border: none;
-    display: flex;
-    height: 100%;
-    width: 80%;
-    flex-direction: column;
-    border: solid red;
-  }
-}
-
-@media (max-width: 584px) {
-  div.card {
-    padding: 25px;
-    height: 200px;
-  }
-}
-
-/* btn remove all from favorite */
 .btn-primary.a-btn-slide-text {
   background-color: rgba(15, 2, 128, 0.116);
   border-color: rgba(6, 1, 10, 0.116);
@@ -308,23 +326,6 @@ div.favorite-card {
   display: flex;
   width: 100px;
 }
-
-/* span.btn:hover {
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  /* background-color: #330147; */
-/* border-color: rgba(6, 1, 10, 0.116); */
-/* }  */
-
-/* span.btn {
-  -webkit-transform: scale(0.8);
-  -moz-transform: scale(0.8);
-  -o-transform: scale(0.8);
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-} */
 
 .favoriteButton {
   background-color: white;
@@ -465,17 +466,6 @@ ul li:hover {
   transform: translateX(20px); */
 }
 /*now first we will hide the suggestion list*/
-.suggestions li {
-  /* margin-bottom: -10px; */
-  overflow: hidden;
-  height: 0;
-  /* text-align: center; */
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  border-radius: 20px;
-}
 /*and make the suggestion reappear when user focus on search field*/
 input[type="search"]:focus + .suggestions li {
   height: 3px;
@@ -536,81 +526,6 @@ input[type="search"]:focus + .suggestions li {
   }
 }
 
-@media (max-width: 461px) {
-  .suggestions {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-
-.autocomplete-wrapper {
-  width: 350px;
-  position: relative;
-  display: inline-block;
-}
-
-.autocomplete-wrapper > div {
-  width: 100%;
-}
-
-.autocomplete-wrapper input {
-  border: 1px solid #cecece;
-  padding: 12px 15px;
-  font-size: 14px;
-  width: 100%;
-}
-
-.autocomplete-wrapper input:focus {
-  /* border-color: #0f67ff; */
-  box-shadow: none;
-  outline: none;
-}
-
-.autocomplete-wrapper .dropdown {
-  width: 100%;
-  padding: 0;
-  text-align: left;
-  max-height: 280px;
-  overflow: hidden;
-  overflow-y: auto;
-  background-color: #ffffff;
-  border: 1px solid #0f67ff;
-  border-top: none;
-}
-
-.autocomplete-wrapper .item {
-  display: block;
-  cursor: pointer;
-  font-size: 14px;
-  padding: 10px;
-}
-
-.autocomplete-wrapper .item.selected-item {
-  /* background-color: #0069ff; */
-  background-color: #563d7c;
-  color: #fafbfc;
-}
-
-.autocomplete-wrapper .item:hover {
-  background-color: #563d7c;
-  color: #fafbfc;
-}
-
-.direct {
-  display: flex;
-  justify-content: center;
-}
-
-.MuiFormControl-fullWidth {
-  width: 40%;
-}
-
-.MuiFormControl-root {
-  background-color: none;
-  display: none;
-}
-
 .MuiFormControl-root.MuiTextField-root.MuiFormControl-marginNormal.MuiFormControl-fullWidth.MuiFormControl-fullWidth {
   width: 40%;
   display: flex;
@@ -619,13 +534,16 @@ input[type="search"]:focus + .suggestions li {
 .MuiAutocomplete-root {
   display: flex;
   justify-content: center;
+  margin-bottom: -20px;
 }
 
-.MuiAutocomplete-listbox {
-  background-color: "white";
-  width: 100%;
-  height: 300px;
+@media (max-width: 561px) {
+  .NewSearch {
+    margin-top: -40px;
+  }
 }
+
+/* **************************searchbox********************************************* */
 
 /* .PrivateNotchedOutline-root-391.MuiOutlinedInput-notchedOutline {
   background-color: white;
@@ -654,6 +572,9 @@ input[type="search"]:focus + .suggestions li {
   align-content: center;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  max-height: 80vh;
 }
 
 /* inside the box li */
@@ -669,6 +590,13 @@ li {
 
 .MuiAutocomplete-option {
   display: flex;
+}
+
+@media (max-width: 584px) {
+  .MuiAutocomplete-option {
+    display: flex;
+    align-items: flex-start;
+  }
 }
 
 /* when hover inside the li box*/
@@ -750,11 +678,11 @@ input[type="search"] {
 
 @media (max-width: 584px) {
   .displayLocation {
-    /* margin-left: 70px; */
-    padding-bottom: 20px;
     display: flex;
-    justify-content: center;
-    width: 70%;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: -40px;
+    margin-top: 5px;
   }
 }
 
@@ -833,3 +761,72 @@ input[type="search"] {
 }
 
 /* ************************************* */
+
+@media (max-width: 1400px) {
+  .MuiInputBase-root {
+    color: rgba(0, 0, 0, 0.87);
+    cursor: text;
+    display: inline-flex;
+    position: relative;
+    font-size: 1rem;
+    margin-top: -100px;
+    box-sizing: border-box;
+    align-items: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.1875em;
+    letter-spacing: 0.00938em;
+  }
+}
+
+@media (max-width: 600px) {
+  .MuiInputBase-root {
+    color: rgba(0, 0, 0, 0.87);
+    cursor: text;
+    display: inline-flex;
+    position: relative;
+    font-size: 1rem;
+    margin-top: 0px;
+    box-sizing: border-box;
+    align-items: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.1875em;
+    letter-spacing: 0.00938em;
+  }
+}
+
+.btn-dark {
+  margin-left: -30px;
+  margin-top: -10px;
+}
+
+.card-title {
+  margin-left: 10px;
+}
+
+@media (max-width: 584px) {
+  .MuiAutocomplete-listbox {
+    /* margin: 0;
+    padding: 8px 0px;
+    overflow: auto;
+    list-style: none;
+    height: 400px; */
+    overflow: hidden;
+  }
+}
+
+/* @media (max-width: 584px) {
+  .MuiAutocomplete-listbox {
+    background-color: "white";
+    width: 100%;
+    max-height: 50vh;
+    height: 150vh;
+  }
+} */
+
+.LocationImgStyle {
+  height: 50px;
+  width: 50px;
+  margin-top: -40px;
+}

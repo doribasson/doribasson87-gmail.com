@@ -27,17 +27,18 @@ class App extends Component {
         </div>
         <div className="displayLocation">
           <img
-            style={{ height: "60px", width: "60px" }}
+            className="LocationImgStyle"
             src={require("../data/icons/icons8-location-8000.png")}
             alt="location"
           />
-          <span className="display-6">Location:</span>
           <span className="myLocation">{this.props.dataLocation}</span>
         </div>
         <Search />
-        <br />
         <div className="card-deck1">
           <div className="dori-container1">
+            <div className="Addfavotire">
+              <Addfavotire />
+            </div>
             <div className="card-title">
               {this.props.forcast.map((temp, i) => {
                 return (
@@ -60,10 +61,6 @@ class App extends Component {
                   </div>
                 );
               })}
-            </div>
-            <div className="a">
-              {" "}
-              <Addfavotire />{" "}
             </div>
           </div>
 
